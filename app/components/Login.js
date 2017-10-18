@@ -3,6 +3,7 @@ import {
   AppRegistry,
   KeyboardAvoidingView,
   TouchableOpacity,
+  AsyncStorage,
   StyleSheet, // CSS-like styles
   Text, // Renders text
   View // Container component
@@ -11,7 +12,7 @@ import {
 import { StackNavigator } from "react-navigation";
 import Spinner from "react-native-loading-spinner-overlay";
 
-import Register from "./Register1";
+import Register from "./Register";
 import ForgetPassword from "./ForgetPassword";
 
 export default class MainLogin extends Component {
@@ -32,7 +33,7 @@ export default class MainLogin extends Component {
     header: null
   };
   async onLoginPress() {
-    this.setState({ error: "", loading: true });
+    this.setState({ loading: true });
     const { email, password } = this.state;
     await AsyncStorage.setItem("email", email);
     await AsyncStorage.setItem("password", password);
@@ -48,7 +49,7 @@ export default class MainLogin extends Component {
               source={require("../../images/banana.png")}
             />
             <Text style={styles.subtext}>
-              Humdum helps you feel more fulfilled.
+              Humdum
             </Text>
           </View>
           <KeyboardAvoidingView style={styles.formContainer}>
@@ -144,6 +145,12 @@ const styles = StyleSheet.create({
     width: 160,
     textAlign: "center",
     opacity: 0.8
+  },
+  errorTextStyle: {
+    color: "#E64A19",
+    alignSelf: "center",
+    paddingTop: 10,
+    paddingBottom: 10
   }
 });
 
