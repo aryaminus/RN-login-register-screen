@@ -1,7 +1,7 @@
-# RNintroscreen
+# RNSignInUpscreen
 
-**RNintroscreen** is the 3rd session build for showing the implementation of Signin and Signup screen in modern apps with stack navigator
-[![RNintroscreen demo]([https://i.imgur.com/vgep2fb.gif])(https://youtu.be/T8eMU0x_P2g)
+**RNSignInUpscreen** is the 3rd session build for showing the implementation of Signin and Signup screen in modern apps with stack navigator
+[![RNSignInUpscreen demo](https://i.imgur.com/vgep2fb.gif)](https://youtu.be/T8eMU0x_P2g)
 
 **Note:**
 
