@@ -22,9 +22,7 @@ export default class MainLogin extends Component {
     super();
     this.state = {
       email: "",
-      password: "",
-      error: "",
-      loading: true
+      password: ""
     };
   }
   static navigationOptions = {
@@ -35,7 +33,6 @@ export default class MainLogin extends Component {
     header: null
   };
   async onLoginPress() {
-    this.setState({ loading: true });
     const { email, password } = this.state;
     await AsyncStorage.setItem("email", email);
     await AsyncStorage.setItem("password", password);
@@ -43,50 +40,44 @@ export default class MainLogin extends Component {
   }
   render() {
     return (
-      <View style={styles.containerl}>
+      <View style={styles.container}>
         <View behavior="padding" style={styles.container}>
           <View style={styles.logoContainer}>
-            <Image
-              style={styles.logo}
-              source={require("./banana.png")}
-            />
-            <Text style={styles.subtext}>
-              Humdum
-            </Text>
+            <Image style={styles.logo} source={require("./banana.png")} />
+            <Text style={styles.subtext}>Humdum</Text>
           </View>
-          <KeyboardAvoidingView style={styles.formContainer}>
-            <View style={styles.container}>
-              <TextInput
-                placeholder="Username"
-                placeholderTextColor="rgba(255,255,255,0.7)"
-                returnKeyType="next"
-                onSubmitEditing={() => this.passwordInput.focus()}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoCorrect={false}
-                style={styles.input}
-                value={this.state.email}
-                onChangeText={email => this.setState({ email })}
-              />
-              <TextInput
-                placeholder="Password"
-                placeholderTextColor="rgba(255,255,255,0.7)"
-                returnKeyType="go"
-                style={styles.input}
-                secureTextEntry
-                ref={input => (this.passwordInput = input)}
-                value={this.state.password}
-                onChangeText={password => this.setState({ password })}
-              />
-              <TouchableOpacity
-                style={styles.buttonContainer}
-                onPress={this.onLoginPress.bind(this)}
-              >
-                <Text style={styles.buttonText}>LOGIN</Text>
-              </TouchableOpacity>
-              <Text style={styles.errorTextStyle}>{this.state.error}</Text>
-            </View>
+          <KeyboardAvoidingView>
+            <TextInput
+              placeholder="Username"
+              placeholderTextColor="rgba(255,255,255,0.7)"
+              returnKeyType="next"
+              onSubmitEditing={() => this.passwordInput.focus()}
+              keyboardType="email-address"
+              autoCapitalize="none"
+              autoCorrect={false}
+              style={styles.input}
+              value={this.state.email}
+              onChangeText={email => this.setState({ email })}
+            />
+            <TextInput
+              placeholder="Password"
+              placeholderTextColor="rgba(255,255,255,0.7)"
+              returnKeyType="go"
+              style={styles.input}
+              secureTextEntry
+              ref={input => (this.passwordInput = input)}
+              value={this.state.password}
+              onChangeText={password => this.setState({ password })}
+            />
           </KeyboardAvoidingView>
+          <View>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={this.onLoginPress.bind(this)}
+          >
+            <Text style={styles.buttonText}>LOGIN</Text>
+          </TouchableOpacity>
+          </View>
         </View>
         <TouchableOpacity style={styles.button}>
           <Text
@@ -112,9 +103,6 @@ export default class MainLogin extends Component {
 }
 
 const styles = StyleSheet.create({
-  containerl: {
-    flex: 1
-  },
   button: {
     backgroundColor: "#27ae60",
     paddingVertical: 15
@@ -144,12 +132,6 @@ const styles = StyleSheet.create({
     width: 160,
     textAlign: "center",
     opacity: 0.8
-  },
-  errorTextStyle: {
-    color: "#E64A19",
-    alignSelf: "center",
-    paddingTop: 10,
-    paddingBottom: 10
   }
 });
 
