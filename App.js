@@ -76,7 +76,7 @@ export default App = StackNavigator({
       title: "Boiler"
     }
   }
-}));
+});
 
 const styles = StyleSheet.create({
   container: {

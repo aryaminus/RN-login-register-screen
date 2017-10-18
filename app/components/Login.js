@@ -4,13 +4,15 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
   AsyncStorage,
+  Image,
+  TextInput,
   StyleSheet, // CSS-like styles
   Text, // Renders text
   View // Container component
 } from "react-native";
 
 import { StackNavigator } from "react-navigation";
-import Spinner from "react-native-loading-spinner-overlay";
+//import Spinner from "react-native-loading-spinner-overlay";
 
 import Register from "./Register";
 import ForgetPassword from "./ForgetPassword";
@@ -46,7 +48,7 @@ export default class MainLogin extends Component {
           <View style={styles.logoContainer}>
             <Image
               style={styles.logo}
-              source={require("../../images/banana.png")}
+              source={require("./banana.png")}
             />
             <Text style={styles.subtext}>
               Humdum
@@ -54,7 +56,6 @@ export default class MainLogin extends Component {
           </View>
           <KeyboardAvoidingView style={styles.formContainer}>
             <View style={styles.container}>
-              <StatusBar barStyle="light-content" backgroundColor="#16a085" />
               <TextInput
                 placeholder="Username"
                 placeholderTextColor="rgba(255,255,255,0.7)"
@@ -84,7 +85,6 @@ export default class MainLogin extends Component {
                 <Text style={styles.buttonText}>LOGIN</Text>
               </TouchableOpacity>
               <Text style={styles.errorTextStyle}>{this.state.error}</Text>
-              <Spinner visible={this.state.loading} />
             </View>
           </KeyboardAvoidingView>
         </View>
@@ -106,7 +106,6 @@ export default class MainLogin extends Component {
             Forget Password
           </Text>
         </TouchableOpacity>
-        <Spinner visible={this.state.loading} />
       </View>
     );
   }
