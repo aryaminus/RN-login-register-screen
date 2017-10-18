@@ -17,7 +17,7 @@ import { StackNavigator } from "react-navigation";
 import Register from "./Register";
 import ForgetPassword from "./ForgetPassword";
 
-export default class MainLogin extends Component {
+export default class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -34,6 +34,8 @@ export default class MainLogin extends Component {
   };
   async onLoginPress() {
     const { email, password } = this.state;
+    console.log(email);
+    console.log(password);
     await AsyncStorage.setItem("email", email);
     await AsyncStorage.setItem("password", password);
     this.props.navigation.navigate("Boiler");
@@ -55,7 +57,6 @@ export default class MainLogin extends Component {
               keyboardType="email-address"
               autoCapitalize="none"
               autoCorrect={false}
-              style={styles.input}
               value={this.state.email}
               onChangeText={email => this.setState({ email })}
             />
@@ -63,21 +64,18 @@ export default class MainLogin extends Component {
               placeholder="Password"
               placeholderTextColor="rgba(255,255,255,0.7)"
               returnKeyType="go"
-              style={styles.input}
               secureTextEntry
               ref={input => (this.passwordInput = input)}
               value={this.state.password}
               onChangeText={password => this.setState({ password })}
             />
           </KeyboardAvoidingView>
-          <View>
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={this.onLoginPress.bind(this)}
           >
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
-          </View>
         </View>
         <TouchableOpacity style={styles.button}>
           <Text
@@ -103,15 +101,6 @@ export default class MainLogin extends Component {
 }
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: "#27ae60",
-    paddingVertical: 15
-  },
-  buttonText: {
-    textAlign: "center",
-    color: "#FFF",
-    fontWeight: "700"
-  },
   container: {
     flex: 1,
     backgroundColor: "#16a085"
@@ -132,6 +121,19 @@ const styles = StyleSheet.create({
     width: 160,
     textAlign: "center",
     opacity: 0.8
+  },
+  buttonContainer: {
+    backgroundColor: "rgba(255,255,255,0.2)",
+    paddingVertical: 15
+  },
+  buttonText: {
+    textAlign: "center",
+    color: "#FFF",
+    fontWeight: "700"
+  },
+  button: {
+    backgroundColor: "#27ae60",
+    paddingVertical: 15
   }
 });
 
