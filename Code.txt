@@ -2,7 +2,6 @@ react-native init RNintroscreen
 
 Package:
 https://reactnavigation.org/docs/intro/
-https://github.com/oblador/react-native-vector-icons
 
 npm install --save react-navigation
 
@@ -27,8 +26,3 @@ const app = StackNavigator({
     }
   }
 });
-
-Then:
-npm install react-native-vector-icons --save
-react-native link react-native-vector-icons
-react-native link
