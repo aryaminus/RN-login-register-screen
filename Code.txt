@@ -1,0 +1,34 @@
+react-native init RNintroscreen
+
+Package:
+https://reactnavigation.org/docs/intro/
+https://github.com/oblador/react-native-vector-icons
+
+npm install --save react-navigation
+
+Usage:
+import { StackNavigator } from "react-navigation";
+
+and
+
+return (
+          <View>
+            <Boiler navigation={this.props.navigation} />
+          </View>
+);
+
+and
+
+const app = StackNavigator({
+  Boiler: {
+    screen: HomeScreen,
+    navigationOptions: {
+      title: "Boiler"
+    }
+  }
+});
+
+Then:
+npm install react-native-vector-icons --save
+react-native link react-native-vector-icons
+react-native link
