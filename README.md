@@ -40,6 +40,11 @@ Follow Code.txt and <a href="https://youtu.be/-sweQ2HzjrA" target="_blank">Youtu
 ### Installation
 Follow Code.txt and Working.png
 
+**Major Properties:**
+ - To hide navabr in certain component & back option in final screen
+ - To using different properties of TextInput and moving cursor from 1 field to other with returnkeytype and hiding password using secureTextEntry
+ -To store the input fields locally using Asyncstorage (server integration in next sessions)
+
 ![Working demo](https://i.imgur.com/UuMpvwT.png)
 
 ## Contributing
