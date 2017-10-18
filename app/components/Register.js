@@ -8,7 +8,6 @@ import {
   TouchableHighlight,
   Image,
   KeyboardAvoidingView,
-  StatusBar,
   AsyncStorage
 } from "react-native";
 
@@ -46,7 +45,6 @@ export default class Register extends Component {
   render() {
     return (
       <View behavior="padding" style={styles.container}>
-        <StatusBar barStyle="light-content" backgroundColor="#16a085" />
         <View style={styles.logoContainer}>
           <Image style={styles.logo} source={require("./banana.png")} />
           <Text style={styles.subtext}>Sign Up:</Text>

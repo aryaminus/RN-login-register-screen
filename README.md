@@ -39,7 +39,7 @@ Follow Code.txt and <a href="https://youtu.be/T8eMU0x_P2g" target="_blank">Youtu
 ### Installation
 Follow Code.txt and Working.png
 
-![Working demo](https://i.imgur.com/WI3EdY7.png)
+![Working demo](https://i.imgur.com/UuMpvwT.png)
 
 ## Contributing
 
