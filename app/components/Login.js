@@ -14,9 +14,6 @@ import {
 import { StackNavigator } from "react-navigation";
 //import Spinner from "react-native-loading-spinner-overlay";
 
-import Register from "./Register";
-import ForgetPassword from "./ForgetPassword";
-
 export default class Login extends Component {
   constructor() {
     super();
@@ -48,7 +45,7 @@ export default class Login extends Component {
             <Image style={styles.logo} source={require("./banana.png")} />
             <Text style={styles.subtext}>Humdum</Text>
           </View>
-          <KeyboardAvoidingView>
+          <KeyboardAvoidingView style={styles.keyboard}>
             <TextInput
               placeholder="Username"
               placeholderTextColor="rgba(255,255,255,0.7)"
@@ -69,13 +66,14 @@ export default class Login extends Component {
               value={this.state.password}
               onChangeText={password => this.setState({ password })}
             />
+
+            <TouchableOpacity
+              style={styles.buttonContainer}
+              onPress={this.onLoginPress.bind(this)}
+            >
+              <Text style={styles.buttonText}>LOGIN</Text>
+            </TouchableOpacity>
           </KeyboardAvoidingView>
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={this.onLoginPress.bind(this)}
-          >
-            <Text style={styles.buttonText}>LOGIN</Text>
-          </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.button}>
           <Text
@@ -121,6 +119,11 @@ const styles = StyleSheet.create({
     width: 160,
     textAlign: "center",
     opacity: 0.8
+  },
+  keyboard:{
+    margin: 20,
+    padding: 20,
+    alignSelf: "stretch"
   },
   buttonContainer: {
     backgroundColor: "rgba(255,255,255,0.2)",
