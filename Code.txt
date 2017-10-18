@@ -1,4 +1,6 @@
 react-native init RNintroscreen
+cd RNintroscreen
+npm install
 
 Package:
 https://reactnavigation.org/docs/intro/

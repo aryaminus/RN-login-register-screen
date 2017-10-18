@@ -2,7 +2,7 @@
 
 **RNSignInUpscreen** is the 3rd session build for showing the implementation of Signin and Signup screen in modern apps with stack navigator
 
-[![RNSignInUpscreen demo](https://i.imgur.com/vgep2fb.gif)](https://youtu.be/T8eMU0x_P2g)
+[![RNSignInUpscreen demo](https://i.imgur.com/vgep2fb.gif)](https://youtu.be/-sweQ2HzjrA)
 
 **Note:**
 
@@ -32,7 +32,7 @@ react-native link
 then press F1 or Fn+F1 and React Native:Run Android on Device 
 
 **Else**
-Follow Code.txt and <a href="https://youtu.be/T8eMU0x_P2g" target="_blank">Youtube</a>
+Follow Code.txt and <a href="https://youtu.be/-sweQ2HzjrA" target="_blank">Youtube</a>
 
 ## Packages:
 <a href="https://reactnavigation.org/docs/intro/" target="_blank">react-navigation</a>

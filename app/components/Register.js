@@ -37,7 +37,7 @@ export default class Register extends Component {
     console.log(name);
     console.log(password);
     await AsyncStorage.setItem("email", email);
-    await AsyncStorage.setItem("email", name);
+    await AsyncStorage.setItem("name", name);
     await AsyncStorage.setItem("password", password);
     this.props.navigation.navigate("Boiler");
   }
