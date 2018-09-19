@@ -46,27 +46,30 @@ export default class Login extends Component {
             <Text style={styles.subtext}>Humdum</Text>
           </View>
           <KeyboardAvoidingView style={styles.keyboard}>
-            <TextInput
-              placeholder="Username"
-              placeholderTextColor="rgba(255,255,255,0.7)"
-              returnKeyType="next"
-              onSubmitEditing={() => this.passwordInput.focus()}
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoCorrect={false}
-              value={this.state.email}
-              onChangeText={email => this.setState({ email })}
-            />
-            <TextInput
-              placeholder="Password"
-              placeholderTextColor="rgba(255,255,255,0.7)"
-              returnKeyType="go"
-              secureTextEntry
-              ref={input => (this.passwordInput = input)}
-              value={this.state.password}
-              onChangeText={password => this.setState({ password })}
-            />
-
+            <View style={styles.window}>
+              <TextInput
+                placeholder="Username"
+                placeholderTextColor="rgba(255,255,255,0.7)"
+                returnKeyType="next"
+                onSubmitEditing={() => this.passwordInput.focus()}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                autoCorrect={false}
+                value={this.state.email}
+                onChangeText={email => this.setState({ email })}
+              />
+            </View>
+            <View style={styles.window}>
+              <TextInput
+                placeholder="Password"
+                placeholderTextColor="rgba(255,255,255,0.7)"
+                returnKeyType="go"
+                secureTextEntry
+                ref={input => (this.passwordInput = input)}
+                value={this.state.password}
+                onChangeText={password => this.setState({ password })}
+              />
+            </View>
             <TouchableOpacity
               style={styles.buttonContainer}
               onPress={this.onLoginPress.bind(this)}
@@ -120,7 +123,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     opacity: 0.8
   },
-  keyboard:{
+  keyboard: {
     margin: 20,
     padding: 20,
     alignSelf: "stretch"
@@ -137,6 +140,9 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#27ae60",
     paddingVertical: 15
+  },
+  window: {
+    marginBottom: 15
   }
 });
 
